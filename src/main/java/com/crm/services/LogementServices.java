@@ -47,6 +47,8 @@ public Optional<Logement> updateLogementById(Logement logement , Long id) {
 		d.setDescription(logement.getDescription());
 		d.setPrix(logement.getPrix());
 		d.setImage(logement.getImage());
+		d.setAdress(logement.getAdress());
+		d.setCapacite(logement.getCapacite());
 		return logementRepository.save(d);
 	});
 }

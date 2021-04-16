@@ -69,6 +69,18 @@ public class Controller {
 			 logementServices.deleteLogementById(Long.parseLong(id));
 			 return ResponseEntity.ok().body("Logement "+ id + " supprime");	 
 		}
+		
+		@RequestMapping(value="/logements/{ids}" ,method=RequestMethod.DELETE)
+		public ResponseEntity<?> deleteLogementByIds(@PathVariable("ids") List<String> ids){
+			
+			ids.forEach(d ->{
+				if(logementServices.existById(Long.parseLong(d))) {
+					logementServices.deleteLogementById(Long.parseLong(d));
+				}
+			});
+				 return ResponseEntity.ok().body("Logements supprimees");	 
+		}
+ 
  
  
  

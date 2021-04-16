@@ -35,7 +35,8 @@ public class Logement {
 	private String image;
 	
 
-	public Logement(@NotNull(message = "intitule is required") String intitule,
+	public Logement(
+			@NotNull(message = "intitule is required") String intitule,
 			@NotNull(message = "description is required") String description,
 			@NotNull(message = "prix is required") double prix,
 			@NotNull(message = "adress is required") String adress,
